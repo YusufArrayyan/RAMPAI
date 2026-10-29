@@ -1,0 +1,25 @@
+# Render Blueprint: RAMPAI Tracker sebagai situs statis.
+# Aplikasi saat ini berjalan penuh di peramban (data contoh di localStorage),
+# jadi tidak butuh server atau basis data.
+services:
+  - type: web
+    name: rampai-tracker
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

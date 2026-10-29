@@ -1,0 +1,10 @@
+{
+  "name": "RAMPAI Tracker",
+  "short_name": "RAMPAI",
+  "lang": "id",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fc",
+  "theme_color": "#2a4fd6",
+  "icons": [{ "src": "/logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any" }]
+}
