@@ -69,7 +69,7 @@ function Akun() {
       </div>
       <form onSubmit={tambah} className="panel-isi" style={{ borderTop: '1px solid var(--line)' }} noValidate>
         <h3 style={{ fontSize: 'var(--t-m)', marginBottom: '0.75rem' }}>Tambah akun</h3>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(13rem, 1fr))', gap: '0.75rem', alignItems: 'end' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(13rem, 100%), 1fr))', gap: '0.75rem', alignItems: 'end' }}>
           <div className="bidang"><label htmlFor="a-nama">Nama</label><input id="a-nama" type="text" value={nama} onChange={(e) => setNama(e.target.value)} autoComplete="off" /></div>
           <div className="bidang"><label htmlFor="a-surel">Surel kampus</label><input id="a-surel" type="email" value={surel} onChange={(e) => setSurel(e.target.value)} autoComplete="off" /></div>
           <div className="bidang">

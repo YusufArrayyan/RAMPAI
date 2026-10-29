@@ -25,3 +25,6 @@ dist-ssr
 
 # Konfigurasi lokal Claude Code
 .claude/
+
+# Alat dan hasil video, mockup, panduan (berkas besar)
+media/

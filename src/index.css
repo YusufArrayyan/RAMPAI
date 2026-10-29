@@ -179,7 +179,7 @@ img { max-width: 100%; display: block; }
 .atas-ponsel { display: none; }
 
 @media (max-width: 860px) {
-  .kerangka { grid-template-columns: 1fr; }
+  .kerangka { grid-template-columns: minmax(0, 1fr); }
   .sisi { display: none; }
   .sisi[data-buka='true'] {
     display: flex; position: fixed; inset: 0 auto 0 0; width: min(19rem, 88vw); z-index: var(--z-toast);
@@ -303,7 +303,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== Detail ===== */
 .detail { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 1.5rem; align-items: start; }
-@media (max-width: 1080px) { .detail { grid-template-columns: 1fr; } }
+@media (max-width: 1080px) { .detail { grid-template-columns: minmax(0, 1fr); } }
 .ringkasan-berkas { padding: 1.25rem 1.5rem; display: grid; gap: 1.25rem; }
 .fakta { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin: 0; }
 .fakta dt { font-size: var(--t-xs); color: var(--ink-2); font-weight: 600; }
@@ -339,7 +339,7 @@ img { max-width: 100%; display: block; }
 .label-draf svg { width: 0.9rem; height: 0.9rem; }
 
 .pasangan { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media (max-width: 760px) { .pasangan { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .pasangan { grid-template-columns: minmax(0, 1fr); } }
 .bagian-draf { border: 1px solid var(--line); border-radius: var(--r-m); overflow: hidden; }
 .bagian-draf + .bagian-draf { margin-top: 1rem; }
 .bagian-draf > header {
@@ -440,7 +440,7 @@ progress.biru::-moz-progress-bar { background: var(--primary); }
 .angka-besar small { font-size: 0.42em; letter-spacing: -0.01em; font-weight: 650; color: var(--ink-2); margin-left: 0.25rem; }
 .kalimat-ind { font-size: var(--t-m); max-width: 36ch; }
 @media (max-width: 900px) {
-  .indikator { grid-template-columns: 1fr; }
+  .indikator { grid-template-columns: minmax(0, 1fr); }
   .indikator > section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
 }
 .batang { display: grid; gap: 0.5rem; font-size: var(--t-s); }
@@ -496,7 +496,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .pemisah { display: flex; align-items: center; gap: 0.75rem; color: var(--ink-2); font-size: var(--t-s); }
 .pemisah::before, .pemisah::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 @media (max-width: 860px) {
-  .masuk { grid-template-columns: 1fr; }
+  .masuk { grid-template-columns: minmax(0, 1fr); }
   .masuk-kiri .alur-masuk, .busur { display: none; }
 }
 
@@ -527,7 +527,7 @@ tbody tr:last-child td { border-bottom: 0; }
 
 /* Grid dua kolom umum */
 .dua { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
-@media (max-width: 960px) { .dua { grid-template-columns: 1fr; } }
+@media (max-width: 960px) { .dua { grid-template-columns: minmax(0, 1fr); } }
 .baris-antara { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .materi { list-style: none; padding: 0; margin: 0; }
 .materi > li { padding: 1.25rem 1.5rem; border-top: 1px solid var(--line); display: grid; gap: 0.75rem; }
@@ -544,7 +544,7 @@ tbody tr:last-child td { border-bottom: 0; }
 /* ===== Polesan: sapaan, bento antrean ===== */
 .sapaan { font-size: var(--t-s); font-weight: 600; color: var(--ink-2); margin-bottom: 0.25rem; }
 .bento-atas { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 1fr); gap: 1.25rem; margin-bottom: 2.25rem; }
-@media (max-width: 1000px) { .bento-atas { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .bento-atas { grid-template-columns: minmax(0, 1fr); } }
 
 .fokus {
   position: relative; overflow: hidden; isolation: isolate;
@@ -642,4 +642,13 @@ tbody tr:last-child td { border-bottom: 0; }
 
 .kartu-berkas > .tombol { justify-self: end; width: 100%; }
 @media (max-width: 760px) { .kartu-berkas > .tombol { width: auto; justify-self: start; } }
-.detail { grid-template-columns: minmax(0, 1fr) 18rem; }
+@media (min-width: 1081px) { .detail { grid-template-columns: minmax(0, 1fr) 18rem; } }
+@media (max-width: 560px) {
+  .butir { grid-template-columns: 2rem minmax(0, 1fr); }
+  .butir > .pilih-tb { grid-column: 2; }
+  .panel-isi { padding: 1.25rem; }
+}
+@media (max-width: 400px) { .pilih-hasil { grid-template-columns: minmax(0, 1fr); } }
+.tumpuk, .tumpuk-s, .pekan, .sebaran, .ringkasan-berkas, .kotak-masuk, .bidang, .materi > li { grid-template-columns: minmax(0, 1fr); }
+select { max-width: 100%; text-overflow: ellipsis; }
+.gulir-x { position: relative; }

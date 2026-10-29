@@ -21,7 +21,7 @@ function RisetPeneliti() {
         sub="Hanya data teragregasi dari mahasiswa yang persetujuan risetnya masih berlaku. Tidak ada nama atau identitas."
         aksi={<button type="button" className="tombol tombol-kedua" onClick={() => unduhTeks('rampai-i4.csv', keCsvI4(state), 'text/csv;charset=utf-8')}><FileSpreadsheet size={18} aria-hidden="true" /> Ekspor CSV</button>}
       />
-      <div className="indikator" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(14rem, 1fr))' }}>
+      <div className="indikator" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(14rem, 100%), 1fr))' }}>
         <section>
           <h2 className="kode-ind"><b>I4</b> Rata-rata skor</h2>
           <p className="angka-besar">{i4.rata === null ? '–' : Math.round(i4.rata)}<small>/100</small></p>

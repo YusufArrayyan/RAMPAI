@@ -78,7 +78,7 @@ export default function PanelIndikator() {
 
       <Sebaran hitung={(st) => state.berkas.filter((b) => b.status === st).length} total={state.berkas.length} />
 
-      <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(22rem, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
+      <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(22rem, 100%), 1fr))', gap: '1.5rem', alignItems: 'start' }}>
         <section className="panel" aria-labelledby="rinci-i2">
           <div className="panel-kepala"><h2 id="rinci-i2">I2 per pertemuan</h2></div>
           <div className="panel-isi">
@@ -93,11 +93,11 @@ export default function PanelIndikator() {
                     </div>
                   ))}
                 </div>
-                <table className="sr-only">
+                <div className="sr-only"><table>
                   <caption>Waktu materi siap pakai sebelum kuliah, per pertemuan</caption>
                   <thead><tr><th scope="col">Pertemuan</th><th scope="col">Waktu sebelum kuliah</th></tr></thead>
                   <tbody>{ind.i2.rincian.map((r) => <tr key={r.pertemuan}><td>{r.pertemuan}</td><td>{durasiJam(r.jam)}</td></tr>)}</tbody>
-                </table>
+                </table></div>
               </>
             )}
           </div>
